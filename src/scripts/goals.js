@@ -1,11 +1,9 @@
 "use strict";
 
-window.addEventListener( "DOMContentLoaded", () =>{
+window.addEventListener("DOMContentLoaded", () => {
+  const hide = document.getElementsByClassName("help-label");
 
-    const hide = document.getElementsByClassName("help-label");
-    
-    document.getElementById("weight").classList.add("hidden");
+  document.getElementById("weight").classList.add("hidden");
 
-    hide.classList.add("hidden");
-}
-)
+  hide.classList.add("hidden");
+});
