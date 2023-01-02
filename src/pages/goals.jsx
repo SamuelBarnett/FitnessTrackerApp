@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../styles/index.css";
+import { Link } from "react-router-dom";
+
 const Goals = () => {
   // state variable is display and function is setDisplay starts as false and is set to one of the pages
   const [display, setDisplay] = useState(false);
@@ -7,6 +9,14 @@ const Goals = () => {
   const HandleClick = (current) => {
     setDisplay(current);
   };
+
+  const Pages = [
+    { label: "Weight", page: "weight-page" },
+    { label: "Weightlifting", page: "weightlifting-page" },
+    { label: "Cardio", page: "cardio-page" },
+    { label: "Nutrition", page: "nutrition-page" },
+    { label: "BMI", page: "BMI-page" },
+  ];
 
   return (
     <div className="goals">
@@ -16,27 +26,13 @@ const Goals = () => {
       <div>
         <h2>Add goals</h2>
         <div>
-          <label className="help-label">help</label>
-        </div>
-        <div>
-          <button className="set-goals-button" onClick={() => HandleClick("weight-page")}>
-            Weight
-          </button>
-          <button className="set-goals-button" onClick={() => HandleClick("weightlifting-page")}>
-            Weightlifting
-          </button>
-          <button className="set-goals-button" onClick={() => HandleClick("cardio-page")}>
-            Cardio
-          </button>
-          <button className="set-goals-button" onClick={() => HandleClick("nutrition-page")}>
-            Nutrition
-          </button>
-          <button className="set-goals-button" onClick={() => HandleClick("BMI-page")}>
-            BMI
-          </button>
+          {Pages.map((Page) => (
+            <button className="set-goals-button" onClick={() => HandleClick(Page.page)}>
+              {Page.label}
+            </button>
+          ))}
         </div>
       </div>
-
       {/* weight page */}
       <div className={`weight-page ${display === "weight-page" ? "" : "hidden"}`}>
         <label>help</label>
@@ -72,7 +68,7 @@ const Goals = () => {
       {/* Weightlifting page */}
       <div className={`weightlifting-page ${display === "weightlifting-page" ? "" : "hidden"}`}>
         <label className="help-label">help</label>
-        <div 
+        <div
         // className={`weightlifting-help ${display === "weightlifting-help" ? "" : "hidden"}`}
         >
           <p>
@@ -156,19 +152,25 @@ const Goals = () => {
         </div>
         <form method="post" className="content-goals">
           <div>
-            <label>Walking</label>
+            <label>Calories</label>
             <div>
               <input />
             </div>
           </div>
           <div>
-            <label>Running</label>
+            <label>Protein</label>
             <div>
               <input />
             </div>
           </div>
           <div>
-            <label>Swimming</label>
+            <label>Fats</label>
+            <div>
+              <input />
+            </div>
+          </div>
+          <div>
+            <label>Carbohydrates</label>
             <div>
               <input />
             </div>

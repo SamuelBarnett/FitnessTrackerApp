@@ -1,6 +1,10 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+
 const Login = () => {
   return (
-    <form method="post" action="login.php" class="content-login">
+    <form class="content-login">
       <div>
         <h2>Login</h2>
         <div>
@@ -27,7 +31,7 @@ const Login = () => {
           <a> No account? Sign up</a>
         </div>
         <div>
-          <button>Login</button>
+          <Link to="goals">Login</Link>
         </div>
       </div>
     </form>

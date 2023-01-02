@@ -15,7 +15,6 @@
     --links: #590004;
     --shadow: rgb(42, 41, 44);
 }
-
 .hidden{
   display: none;
 }
@@ -29,7 +28,7 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */

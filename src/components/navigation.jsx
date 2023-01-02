@@ -1,10 +1,23 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+
 const Navigation = () => {
+  const Links = [
+    { label: "Home", to: "/" },
+    { label: "Goals", to: "/goals" },
+    { label: "Food Dairy", to: "/foodDiary" },
+  ];
+
   return (
-    <div className="navigation">
-      <label> Home </label>
-      <label> Goals </label>
-      <label> Food Log </label>
-    </div>
+    <nav>
+      <ul>
+        {Links.map((link) => (
+          <li key={link.to}>
+            <NavLink to={link.to}>{link.label}</NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 export default Navigation;
