@@ -35,7 +35,7 @@ const Goals = () => {
       </div>
       {/* weight page */}
       <div className={`weight-page ${display === "weight-page" ? "" : "hidden"}`}>
-        <label>help</label>
+        <summary>help</summary>
         <div
         // className={`weight-help ${display === "weight-help" ? "" : "hidden"}`}
         >
@@ -67,10 +67,8 @@ const Goals = () => {
 
       {/* Weightlifting page */}
       <div className={`weightlifting-page ${display === "weightlifting-page" ? "" : "hidden"}`}>
-        <label className="help-label">help</label>
-        <div
-        // className={`weightlifting-help ${display === "weightlifting-help" ? "" : "hidden"}`}
-        >
+        <div>
+          <label className="help-label">help</label>
           <p>
             Weightlifting can be a fun hobby a great way to stay in shape. Remember to start small and learn proper form
             so you don't injure yourself.
@@ -103,6 +101,7 @@ const Goals = () => {
         </form>
       </div>
       {/* End of weightlifting page */}
+
       {/* Cardio */}
       <div className={`cardio-page ${display === "cardio-page" ? "" : "hidden"}`}>
         <label className="help-label">help</label>
@@ -137,7 +136,7 @@ const Goals = () => {
         </form>
       </div>
       {/* end of cardio */}
-      {/* nutrition */}
+      {/* Nutrition */}
       <div className={`nutrition-page ${display === "nutrition-page" ? "" : "hidden"}`}>
         <label className="help-label">help</label>
         <div

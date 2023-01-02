@@ -6,6 +6,7 @@ const Navigation = () => {
     { label: "Home", to: "/" },
     { label: "Goals", to: "/goals" },
     { label: "Food Dairy", to: "/foodDiary" },
+    { label: "Login", to: "/Login" },
   ];
 
   return (
