@@ -23,9 +23,6 @@ const Diary = () => {
           }}
           onChange={handleChange}
         />
-
-
-
       </div>
       {/* This is to be replaced by the goals set and stored */}
       <div>
