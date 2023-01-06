@@ -18,6 +18,7 @@ const Goals = () => {
     { label: "BMI", page: "BMI-page" },
   ];
 
+  // may be better to replace the divs with templates.
   return (
     <div className="goals">
       <div>
