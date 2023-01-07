@@ -1,5 +1,6 @@
 - [specifications](#specifications)
   - [Pages](#pages)
+  - [Ideas](#ideas-1)
 
 ## Design components
 
@@ -24,26 +25,6 @@ Green with peach highlights and red links
 
 Quotes from getting over it and daily quotes 
 
-# specifications
-
-Login page:
-
-The login page should have a simple layout, with a white background (#FFFFFF) and a login form centered on the page.
-The form should have input fields for the user's email and password, and a login button. The input fields and button should have a light green background color (#56C6A9).
-The page should also have a link to a "create account" page, where users can sign up for a new account.
-The page should have a dark green header (#267355) at the top, with the name of the website in white text.
-Home page:
-
-The home page should have a clean and modern design, with a white background (#FFFFFF) and a light green (#56C6A9) sidebar on the left side of the page.
-The sidebar should contain links to the different pages of the website, such as the data visualization page and any other pages you want to include.
-The main content area of the page should display a dashboard with various widgets, such as a summary of recent activity or a list of upcoming events. The widgets should have a light pink background color (#FFC3A0).
-The page should have a dark green header (#267355) at the top, with the name of the website in white text and a user menu in the top right corner.
-Data visualization page:
-
-The data visualization page should have a similar layout to the home page, with a white background (#FFFFFF) and a light green sidebar (#56C6A9) on the left side.
-The main content area should display a data visualization, such as a line chart or bar chart, using the D3.js library. The data visualization should be interactive and allow the user to filter or drill down into the data.
-The page should have a dark green header (#267355) at the top, with the name of the website in white text and a user menu in the top right corner.
-
 ## Pages
 
 home page would have most important info, calories burned, progress graph, on track meter, suggested activities. with side bar Navigation.
@@ -64,5 +45,10 @@ Recommendations: The page could provide recommendations for healthy food options
 Recipe suggestions: The page could include a database of healthy recipes that users can browse and add to their meal plan.
 
 Integration with fitness tracking: The page could show how the user's food intake impacts their overall fitness goals, such as by showing the number of calories they need to consume in order to maintain or lose weight.
+
+
+## Ideas
+
+have a calendar with the days that you have logged in and signed in to visualize progress.
 
 

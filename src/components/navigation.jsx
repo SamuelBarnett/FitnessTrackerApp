@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "../styles/navigation.css";
 
 const Navigation = () => {
   const Links = [
@@ -7,6 +8,8 @@ const Navigation = () => {
     { label: "Goals", to: "/goals" },
     { label: "Food Dairy", to: "/foodDiary" },
     { label: "Login", to: "/Login" },
+    // change to sign up because register sounds weird
+    { label: "Register", to: "/register" },
   ];
 
   return (
@@ -14,7 +17,7 @@ const Navigation = () => {
       <ul>
         {Links.map((link) => (
           <li key={link.to}>
-            <NavLink to={link.to}>{link.label}</NavLink>
+            <NavLink className="NavElement" to={link.to}>{link.label}</NavLink>
           </li>
         ))}
       </ul>

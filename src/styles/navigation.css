@@ -1,0 +1,16 @@
+
+.NavElement {
+  text-decoration: none;
+  
+  margin: 2rem;
+}
+nav ul {
+  display: flex;
+  border: solid 0.25em var(--text-dark);
+  border-radius: 0.5rem;
+  gap: 2rem;
+  justify-content: center;
+}
+nav{
+    margin: 2rem;
+}

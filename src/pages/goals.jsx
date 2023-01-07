@@ -41,13 +41,10 @@ const Goals = () => {
         // className={`weight-help ${display === "weight-help" ? "" : "hidden"}`}
         >
           <p>
-            Keeping track of your weight is a key factor in health and fitness. Keeping track of your weight will make
-            you more aware of whether you are eating the correct amount of food to reach your goals.
+            Keeping track of your weight is a key factor in health and fitness. Keeping track of your weight will make you more aware of whether you
+            are eating the correct amount of food to reach your goals.
           </p>
-          <p>
-            Enter your current weight and the weight you wish to be and dates for both. You can then visualize your
-            progress to stay motivated.
-          </p>
+          <p>Enter your current weight and the weight you wish to be and dates for both. You can then visualize your progress to stay motivated.</p>
         </div>
         <form method="post" className="content-goals">
           <div>
@@ -71,13 +68,11 @@ const Goals = () => {
         <div>
           <label className="help-label">help</label>
           <p>
-            Weightlifting can be a fun hobby a great way to stay in shape. Remember to start small and learn proper form
-            so you don't injure yourself.
+            Weightlifting can be a fun hobby a great way to stay in shape. Remember to start small and learn proper form so you don't injure yourself.
           </p>
           <p>
-            The 3 main compound movements are Bench squat and DeadLift however none of them are required to form a
-            balance weightlifting routine. Add and remove different workouts to form a balanced workout routine and use
-            the smart meter for suggestions.
+            The 3 main compound movements are Bench squat and DeadLift however none of them are required to form a balance weightlifting routine. Add
+            and remove different workouts to form a balanced workout routine and use the smart meter for suggestions.
           </p>
         </div>
         <form method="post" className="content-goals">
@@ -110,8 +105,8 @@ const Goals = () => {
         // className={`cardio-help ${display === "cardio-help" ? "" : "hidden"}`}
         >
           <p>
-            Cardio is a essential part of healthy lifestyle and is often neglected by most. Even just 30 minutes of
-            walking a day can greatly improve your overall well being and health.
+            Cardio is a essential part of healthy lifestyle and is often neglected by most. Even just 30 minutes of walking a day can greatly improve
+            your overall well being and health.
           </p>
           <p>Add and remove different cardio movements to reach your daily goal.</p>
         </div>
@@ -144,9 +139,8 @@ const Goals = () => {
         // className={`nutrition-help ${display === "nutrition-help" ? "" : "hidden"}`}
         >
           <p>
-            Nutrition is what you consume on a consistent basis and is the backbone of a healthy lifestyle. The amount
-            you eat and what you eat will determine if you reach your goals or not. Nutrition makes up 90% of your
-            routine and should be given 90% of your effort.
+            Nutrition is what you consume on a consistent basis and is the backbone of a healthy lifestyle. The amount you eat and what you eat will
+            determine if you reach your goals or not. Nutrition makes up 90% of your routine and should be given 90% of your effort.
           </p>
           <p>Add or remove daily nutrition goals.</p>
         </div>
