@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <form class="content-login">
-      <div>
+    <form className="content-login ">
+      <div className="bg-green-900">
         <h2>Login</h2>
         <div>
           <label>Username</label>

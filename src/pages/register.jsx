@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Register = () => {
   return (
     <form class="content-register">
-      <div>
+      <div className="bg-green-900">
         <h2>Register</h2>
         <div>
           <label>Username</label>
