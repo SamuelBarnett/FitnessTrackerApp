@@ -20,7 +20,7 @@ const Goals = () => {
 
   // may be better to replace the divs with templates.
   return (
-    <div className="goals bg-green-900 min-w-[100rem]">
+    <div className="goals grid grid-cols-3 bg-green-900 min-w-[100rem]">
       <div>
         <h1 className="inline font-bold text-3xl m-[2rem]">Goals</h1>
       </div>
@@ -29,7 +29,7 @@ const Goals = () => {
         <div>
           {/* set-goals-button */}
           {Pages.map((Page) => (
-            <button className="bg-green-700 rounded-2xl p-2 mx-2" onClick={() => HandleClick(Page.page)}>
+            <button className="bg-green-300 rounded-2xl p-2 mx-2 hover:bg-green-700" onClick={() => HandleClick(Page.page)}>
               {Page.label}
             </button>
           ))}
