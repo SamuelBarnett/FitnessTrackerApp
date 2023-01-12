@@ -1,6 +1,19 @@
-- [specifications](#specifications)
+- [name ideas](#name-ideas)
+  - [Design components](#design-components)
+  - [Skill implementation](#skill-implementation)
+  - [Color scheme](#color-scheme)
+  - [Ideas](#ideas)
   - [Pages](#pages)
   - [Ideas](#ideas-1)
+
+
+# name ideas
+
+Something with visual worked into it as to say that the main point of the app is to visualize your progress.
+
+FitVisual.
+
+VisualFitness.
 
 ## Design components
 
@@ -8,33 +21,34 @@ page breakdown:
 
 login / register ??? maybe not because its a personal app. Maybe for convenience.
 
-figma design
+figma design.
 
 ## Skill implementation
 
 Find a way to explore the database and do advanced features on it.
 
-NodeJS and maybe react depends
-
+NodeJS and maybe react depends.
 
 ## Color scheme
 
-Green with peach highlights and red links
+Green with peach highlights and red links.
 
 ## Ideas
 
-Quotes from getting over it and daily quotes 
+Quotes from getting over it and daily quotes.
 
 ## Pages
 
 home page would have most important info, calories burned, progress graph, on track meter, suggested activities. with side bar Navigation.
 
-Login/signup page: This is the page where users can create an account or log in to an existing account.
-Dashboard page: This is the main page of the app, where users can see a summary of their fitness data, such as their steps taken, distance traveled, and calories burned.
+Login/signup page: 
+
+Dashboard/Home page: This is the main page of the app, where users can see a summary of their fitness data, such as their steps taken, distance traveled, and calories burned.
 Activities page: This page allows users to track their workouts and other physical activities. Users can add new activities, view their activity history, and see their progress over time.
+
 Goals page: This page lets users set fitness goals and track their progress towards achieving them.
 Profile page: This page allows users to view and edit their personal profile, such as their name, age, height, and weight.
-Settings page: This page allows users to customize the app's settings, such as their units of measurement and notification preferences
+Settings page: This page allows users to customize the app's settings, such as their units of measurement and notification preferences.
 
 A food diary: Users can log their meals and snacks, including the types and quantities of food they ate. They can also view their food intake over a specific time period, such as a day or week.
 

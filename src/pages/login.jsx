@@ -30,8 +30,8 @@ const Login = () => {
           <label> Remember Me </label>
           <a> No account? Sign up</a>
         </div>
-        <div>
-          <Link to="goals">Login</Link>
+        <div className="p-[2rem]">
+          <Link to="/goals" className="p-[1rem] bg-blue-500 rounded">Login</Link>
         </div>
       </div>
     </form>

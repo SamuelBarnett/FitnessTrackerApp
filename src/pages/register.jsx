@@ -39,7 +39,7 @@ const Register = () => {
           <a> No account? Sign up</a>
         </div>
         <div>
-          <Link to="goals">Register</Link>
+          <Link to="/goals">Register</Link>
         </div>
       </div>
     </form>
