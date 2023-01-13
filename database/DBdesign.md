@@ -7,8 +7,6 @@ possible tables or attributes.
 
 goals:
 
-
-
 Weight:
 
 current weight
