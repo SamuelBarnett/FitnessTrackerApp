@@ -7,19 +7,45 @@ possible tables or attributes.
 
 goals:
 
-Weight
 
-Weightlifting
 
-Cardio
+Weight:
 
-Nutrition
+current weight
+goal weight
 
-BMI
+Weightlifting:
+
+bench
+
+squat
+
+dead lift
+
+Cardio:
+
+walking
+
+running 
+
+Nutrition:
+
+Calories
+
+Protein 
+
+Fats
+
+Carbohydrates
+
+BMI:
 
 --- 
 
 Users
 
+## Plan
+
+Create a static version first then change to dynamic after.
 
 
