@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <form className="content-login ">
-      <div className="bg-green-900">
+      <div className="">
         <h2>Login</h2>
         <div>
           <label>Username</label>
@@ -30,8 +30,8 @@ const Login = () => {
           <label> Remember Me </label>
           <a> No account? Sign up</a>
         </div>
-        <div className="p-[2rem]">
-          <Link to="/goals" className="p-[1rem] bg-blue-500 rounded">Login</Link>
+        <div className="">
+          <Link to="/goals" className="">Login</Link>
         </div>
       </div>
     </form>

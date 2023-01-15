@@ -1,6 +1,6 @@
 const Diary = () => {
   return (
-    <div className="bg-green-900">
+    <div className="">
       <div>
         <h1> Food Diary </h1>
       </div>
