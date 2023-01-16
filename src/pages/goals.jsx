@@ -20,26 +20,26 @@ const Goals = () => {
 
   // may be better to replace the divs with templates.
   return (
-    <div className="goals grid grid-cols-3 bg-green-900 min-w-[100rem]">
+    <div className="">
       <div>
-        <h1 className="inline font-bold text-3xl m-[2rem]">Goals</h1>
+        <h1 className="">Goals</h1>
       </div>
       <div>
-        <h2 className="text-2xl m-[2rem]">Add goals</h2>
+        <h2 className="">Add goals</h2>
         <div>
           {/* set-goals-button */}
           {Pages.map((Page) => (
-            <button className="bg-green-300 rounded-2xl p-2 mx-2 hover:bg-green-700" onClick={() => HandleClick(Page.page)}>
+            <button className="" onClick={() => HandleClick(Page.page)}>
               {Page.label}
             </button>
           ))}
         </div>
       </div>
-      <div className="m-[2rem]">
+      <div className="">
         {/* weight page */}
         <div className={`weight-page ${display === "weight-page" ? "" : "hidden"}`}>
           <label>help</label>
-          <div className="max-w-[30rem]">
+          <div className="">
             {/* className={`weight-help ${display === "weight-help" ? "" : "hidden"}`} */}
             <p>
               Keeping track of your weight is a key factor in health and fitness. Keeping track of your weight will make you more aware of whether you
@@ -66,7 +66,7 @@ const Goals = () => {
 
         {/* Weightlifting page */}
         <div className={`weightlifting-page ${display === "weightlifting-page" ? "" : "hidden"}`}>
-          <div className="max-w-[30rem]">
+          <div className="">
             <label className="help-label">help</label>
             <p>
               Weightlifting can be a fun hobby a great way to stay in shape. Remember to start small and learn proper form so you don't injure
@@ -104,7 +104,7 @@ const Goals = () => {
         <div className={`cardio-page ${display === "cardio-page" ? "" : "hidden"}`}>
           <label className="help-label">help</label>
           <div
-            className="max-w-[30rem]"
+            className=""
             // className={`cardio-help ${display === "cardio-help" ? "" : "hidden"}`}
           >
             <p>
@@ -139,7 +139,7 @@ const Goals = () => {
         <div className={`nutrition-page ${display === "nutrition-page" ? "" : "hidden"}`}>
           <label className="help-label">help</label>
           <div
-            className="max-w-[30rem]"
+            className=""
             // className={`nutrition-help ${display === "nutrition-help" ? "" : "hidden"}`}
           >
             <p>
@@ -180,7 +180,7 @@ const Goals = () => {
         <div className={`BMI-page ${display === "BMI-page" ? "" : "hidden"}`}>
           <label className="help-label">help</label>
           <div
-            className="max-w-[30rem]"
+            className=""
             // className={`BMI-help ${display === "BMI-help" ? "" : "hidden"}`}
           >
             <p>BMI or body mass index is a way of telling the composition of your body.</p>
