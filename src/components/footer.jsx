@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-      <div className="text-center bg-green-500 ">
+      <div className="">
         {/* Idea is to have a one of the progress graphs on the home page.*/}
         <label> @SamuelBarnett </label>
       </div>
