@@ -1,10 +1,20 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
 const Login = () => {
+  const FormSubmit = (loginInfo) => {
+
+    // HandleLogin();
+  };
+  const [name,setName] = useState("");
+  const [password,setPassword] = useState("");
+  const [email,setEmail] = useState("");
+
+
   return (
-    <form className="content-login ">
+    <form className="content-login" onSubmit={() => FormSubmit}>
       <div className="">
         <h2>Login</h2>
         <div>
@@ -13,7 +23,7 @@ const Login = () => {
             <span>
               <i class="fa-solid fa-user"></i>
             </span>
-            <input />
+            <input value={name} onChange={(e) => setName(e.target.value)} />
           </div>
         </div>
         <div>
@@ -22,7 +32,7 @@ const Login = () => {
             <span>
               <i class="fa-solid fa-lock"></i>
             </span>
-            <input />
+            <input value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
         </div>
         <div>
@@ -31,7 +41,9 @@ const Login = () => {
           <a> No account? Sign up</a>
         </div>
         <div className="">
-          <Link to="/goals" className="">Login</Link>
+          <button type="submit" onClick={() => FormSubmit}>
+            Login
+          </button>
         </div>
       </div>
     </form>
