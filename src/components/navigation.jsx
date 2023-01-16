@@ -3,22 +3,22 @@ import { NavLink } from "react-router-dom";
 // import "../styles/navigation.css";
 
 const Navigation = () => {
-  const Links = [
-    { label: "Home", to: "/" },
-    { label: "Goals", to: "/goals" },
-    { label: "Food Dairy", to: "/foodDiary" },
-    { label: "Login", to: "/Login" },
-    // change to sign up because register sounds weird
-    { label: "Register", to: "/register" },
+  const pages = [
+    { label: "Home", destination: "/" },
+    { label: "Goals", destination: "/goals" },
+    { label: "Food Dairy", destination: "/foodDiary" },
+    { label: "Login", destination: "/Login" },
+    // change destination sign up because register sounds weird
+    { label: "Register", destination: "/register" }
   ];
   // style={{ justifyContent: 'center', alignItems: 'center' }}
   // flex flex-col justify-center content-center
   return (
     <nav className="">
       <ul className="">
-        {Links.map((link) => (
-          <li className="mt-[1rem] mr-[5rem] p-[1rem]" key={link.to}>
-            <NavLink className="text-xl text-black-500 inline-block" to={link.to}>{link.label}</NavLink>
+        {pages.map((page) => (
+          <li className="">
+            <NavLink className="" to={page.destination}>{page.label}</NavLink>
           </li>
         ))}
       </ul>
