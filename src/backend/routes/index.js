@@ -1,8 +1,10 @@
-'use strict';
-import { application, express } from "express";
+// 'use strict';
+import Express from "express";
 import { Register } from "../controllers/register";
 
-const router = express.Router();
+const router = Express.Router();
 
-router.post()
+router.post('/register', Register);
+
+export default router;
 

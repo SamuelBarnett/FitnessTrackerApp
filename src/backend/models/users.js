@@ -22,5 +22,4 @@ const USERS = database.define("users", {
 
 console.log(USERS === database.models.USERS); // this must be true
 
-
 export default USERS;

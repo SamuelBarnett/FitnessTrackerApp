@@ -3,9 +3,10 @@
 // const MongoClient = require("mongodb").MongoClient;
 // const bcrypt = require("bcrypt");
 const express = require("express");
+const dotenv = require("dotenv");
 const cors = require("cors");
 const path = require('path');
-
+dotenv.config();
 
 const app = express();
 
