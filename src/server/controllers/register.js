@@ -2,6 +2,7 @@
 import USERS from "../models/users";
 import bcrypt from "bcrypt";
 
+// add validation later.
 const Register = async (req, res) => {
   const { name, password, email } = req.body;
   const salt = await bcrypt.genSalt();
@@ -13,5 +14,4 @@ const Register = async (req, res) => {
     console.log(error);
   }
 };
-
 export default Register;
