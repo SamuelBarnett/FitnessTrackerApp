@@ -15,5 +15,4 @@ const HandleLogin = (data) => {
     .catch();
 };
 
-
 export default HandleLogin;

@@ -1,3 +1,17 @@
-import { Sequelize } from "sequelize";
-const database = new Sequelize('mysql://localhost:3306/database',{})
-export default database;
+// import { mysql } from "mysql";
+var mysql = require("mysql");
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "fitnesstracker",
+});
+
+db.connect((err) => {
+  if (err) {
+    return console.log("error: " + err.message);
+  }
+  console.log("Connected to the MySQL server.");
+});
+
+export default db;
