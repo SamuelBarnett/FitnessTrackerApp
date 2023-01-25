@@ -2,36 +2,41 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+const Register = () => {
 
-const Login = () => {
-  const FormSubmit = (loginInfo) => {
-
-    // HandleLogin();
-  };
   const [name,setName] = useState("");
   const [password,setPassword] = useState("");
-
+  const [email,setEmail] = useState("");
 
   return (
-    <form className="content-login" onSubmit={() => FormSubmit}>
+    <form className="content-register">
       <div className="">
-        <h2>Login</h2>
+        <h2>Register</h2>
         <div>
           <label>Username</label>
           <div>
             <span>
-              <i class="fa-solid fa-user"></i>
+              <i className="fa-solid fa-user"></i>
             </span>
-            <input value={name} onChange={(e) => setName(e.target.value)} />
+            <input />
           </div>
         </div>
         <div>
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <div>
             <span>
-              <i class="fa-solid fa-lock"></i>
+              <i className="fa-solid fa-lock"></i>
             </span>
-            <input value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input />
+          </div>
+        </div>
+        <div>
+          <label htmlFor="email">Email</label>
+          <div>
+            <span>
+              <i className="fa-solid fa-email"></i>
+            </span>
+            <input />
           </div>
         </div>
         <div>
@@ -39,14 +44,12 @@ const Login = () => {
           <label> Remember Me </label>
           <a> No account? Sign up</a>
         </div>
-        <div className="">
-          <button type="submit" onClick={() => FormSubmit}>
-            Login
-          </button>
+        <div>
+          <Link to="{/Register}">Register</Link>
         </div>
       </div>
     </form>
   );
 };
 
-export default Login;
+export default Register;
