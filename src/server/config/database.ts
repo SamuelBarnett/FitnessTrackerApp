@@ -1,5 +1,5 @@
 var mysql = require("mysql");
-export const db = mysql.createConnection({
+const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
@@ -12,3 +12,5 @@ db.connect((err) => {
   }
   console.log("Connected to the MySQL server.");
 });
+
+export default db;

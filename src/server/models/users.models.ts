@@ -12,7 +12,12 @@ export const CreateUser = (username, password, email) => {
     }
   );
 };
-
 export const LoginUser = (username) => {
-  db.query("SELECT * FROM users WHERE username = ?", username);
+  db.query("SELECT * FROM users WHERE username = ?", username),
+    (err) => {
+      if (err) {
+        console.log("error:", err);
+        return;
+      }
+    };
 };

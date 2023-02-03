@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Goals = () => {
   // state variable is display and function is setDisplay starts as false and is set to one of the pages
-  const [display, setDisplay] = useState(false);
+  const [display, setDisplay] = useState("");
 
   const HandleClick = (current) => {
     setDisplay(current);

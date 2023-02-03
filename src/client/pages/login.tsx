@@ -2,18 +2,16 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-
 const Login = () => {
   const FormSubmit = (loginInfo) => {
-
+      
     // HandleLogin();
   };
   const [name,setName] = useState("");
   const [password,setPassword] = useState("");
 
-
   return (
-    <form className="content-login" onSubmit={() => FormSubmit}>
+    <form className="content-login" onSubmit={FormSubmit}>
       <div className="">
         <h2>Login</h2>
         <div>
@@ -40,7 +38,7 @@ const Login = () => {
           <a> No account? Sign up</a>
         </div>
         <div className="">
-          <button type="submit" onClick={() => FormSubmit}>
+          <button type="submit">
             Login
           </button>
         </div>

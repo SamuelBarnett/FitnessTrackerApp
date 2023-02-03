@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "../styles/App.css";
-import Goals from "../pages/goals";
-import Login from "../pages/login";
+import Goals from "../pages/goals.tsx";
+import Login from "../pages/login.tsx";
 import Navigation from "./navigation";
 import Diary from "../pages/foodDiary";
-import Home from "../pages/home";
-import Register from "../pages/register";
+import Home from "../pages/home.tsx";
+import Register from "../pages/register.tsx";
 import Footer from "./footer";
 
 function App() {

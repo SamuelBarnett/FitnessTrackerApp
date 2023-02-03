@@ -1,4 +1,4 @@
-// controllers where you validate and 
+// controllers where you validate and
 "use strict";
 import db from "../config/database";
 import bcrypt from "bcrypt";
@@ -15,7 +15,7 @@ const Register = async (req, res) => {
   const HashedPassword = await bcrypt.hash(password, salt);
   // tries to create a new instance in the USERS model, console.logs error if there is one.
   try {
-    await CreateUser( username, HashedPassword, email );
+    await CreateUser(username, HashedPassword, email);
     console.log("Reg successful");
   } catch (error) {
     console.log(error);
