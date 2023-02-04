@@ -1,9 +1,9 @@
-import db from "../config/database";
+import db from "../config/database.js";
 
-export const CreateUser = (username, password, email) => {
+export const CreateUser = (name, password, email) => {
   db.query(
     "INSERT INTO users (username, password, email) VALUES (?,?,?)",
-    [username, password, email],
+    [name, password, email],
     (err) => {
       if (err) {
         console.log("error:", err);

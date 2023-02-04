@@ -1,7 +1,7 @@
 // 'use strict';
 import Express from "express";
 // import db from "../config/database.ts"
-import Register from "../controllers/register";
+import Register from "../controllers/register.js";
 const router = Express.Router();
 // define routes and what they do
 //(("/register"------ this is the name of the route, Register ---- this is the function it calls))

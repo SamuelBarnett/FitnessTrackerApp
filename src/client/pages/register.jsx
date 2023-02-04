@@ -17,11 +17,12 @@ const Register = () => {
         email: email,
         password: password,
       });
-      // navigate("/");
+      navigate("/goals");
+      console.log("hey 1");
     } catch (error) {
       if (error.response) {
-        console.log(error.response.data.msg);
-        console.log("hey");
+        console.log(error.response.data);
+        console.log("hey 1");
       }
     }
     e.preventDefault();

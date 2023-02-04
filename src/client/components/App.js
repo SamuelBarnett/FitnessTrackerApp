@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "../styles/App.css";
-import Goals from "../pages/goals.tsx";
-import Login from "../pages/login.tsx";
-import Navigation from "./navigation";
-import Diary from "../pages/foodDiary";
-import Home from "../pages/home.tsx";
-import Register from "../pages/register.tsx";
-import Footer from "./footer";
+import Goals from "../pages/goals.jsx";
+import Login from "../pages/login.jsx";
+import Navigation from "./navigation.jsx";
+import Diary from "../pages/foodDiary.jsx";
+import Home from "../pages/home.jsx";
+import Register from "../pages/register.jsx";
+import Footer from "./footer.jsx";
 
 function App() {
   return (

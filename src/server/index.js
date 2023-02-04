@@ -1,9 +1,35 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const cors = require("cors");
-const path = require("path");
+import path from "path";
+import cors from "cors";
+import dotenv from "dotenv";
+import express from "express";
+
 dotenv.config();
+import db from "./config/database.js";
+import router from "./routes/index.js";
 const app = express();
+
+
+// app.use(bodyParser.urlencoded({ extended: true }))
+
+
+
+//````````````````````````````````````````
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+//````````````````````````````````````````````````````
+
+// wait for database
+ await db.connect((err) => {
+  if (err) {
+    return console.log("error: " + err.message);
+  }
+  console.log("Connected to the MySQL server.");
+});
+
+app.use(express.json());
+app.use(router);
+
 app.use(express.static(path.join(__dirname, "../../build")));
 
 var corsOptions = {
