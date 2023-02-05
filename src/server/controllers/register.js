@@ -16,11 +16,10 @@ const Register = async (req, res) => {
   // tries to create a new instance in the USERS model, console.logs error if there is one.
   try {
     await CreateUser(name, HashedPassword, email);
-    console.log("Reg successful");
+    console.log("Registration successful");
+    res.status(200).json({ msg: "register controller success" });
   } catch (error) {
-    console.log(error);
-    console.log("hey 2");
-
+    return res.status(404).json({ msg: "error register controller" });
   }
 };
 

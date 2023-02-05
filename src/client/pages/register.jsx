@@ -8,24 +8,24 @@ const Register = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const navigate = useNavigate();
-
+  const navigation = useNavigate();
+  
   const Reg = async (e) => {
+    e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/users", {
+      await axios.post("/users/register", {
         name: name,
         email: email,
         password: password,
       });
-      navigate("/goals");
-      console.log("hey 1");
+      navigation("/goals");
+      console.log("Axios success");
     } catch (error) {
       if (error.response) {
-        console.log(error.response.data);
-        console.log("hey 1");
+        console.log(error);
+        console.log("Axios post error");
       }
     }
-    e.preventDefault();
   };
 
   return (
@@ -65,7 +65,7 @@ const Register = () => {
           <a> No account? Sign up</a>
         </div>
         <div>
-          <button type="submit"> Register </button>
+          <button type="submit">Register</button>
         </div>
       </div>
     </form>

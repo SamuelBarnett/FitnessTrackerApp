@@ -1,34 +1,34 @@
+"use strict";
+
 import path from "path";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-
 dotenv.config();
 import db from "./config/database.js";
-import router from "./routes/index.js";
+import UserRoutes from "./routes/Users.js";
 const app = express();
-
 
 // app.use(bodyParser.urlencoded({ extended: true }))
 
-
-
 //````````````````````````````````````````
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 //````````````````````````````````````````````````````
 
 // wait for database
- await db.connect((err) => {
-  if (err) {
-    return console.log("error: " + err.message);
-  }
-  console.log("Connected to the MySQL server.");
-});
+// await db.connect((err) => {
+//   if (err) {
+//     return console.log("error: " + err.message);
+//   }
+//   console.log("Connected to the MySQL server.");
+// });
 
+// handle incoming requests and look to see if there is json and convert them to objects
 app.use(express.json());
-app.use(router);
+// handles all routes starting with /users for example /users/register
+app.use("/users", UserRoutes);
 
 app.use(express.static(path.join(__dirname, "../../build")));
 

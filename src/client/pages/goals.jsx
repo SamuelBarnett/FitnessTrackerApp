@@ -9,7 +9,7 @@ const Goals = () => {
   const HandleClick = (current) => {
     setDisplay(current);
   };
-
+  
   const Pages = [
     { label: "Weight", page: "weight-page" },
     { label: "Weightlifting", page: "weightlifting-page" },
@@ -17,7 +17,6 @@ const Goals = () => {
     { label: "Nutrition", page: "nutrition-page" },
     { label: "BMI", page: "BMI-page" },
   ];
-
   // may be better to replace the divs with templates.
   return (
     <div className="">

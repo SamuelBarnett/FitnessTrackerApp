@@ -10,7 +10,7 @@ db.connect((err) => {
   if (err) {
     return console.log("error: " + err.message);
   }
-  console.log("Connected to the MySQL server.");
+  console.log("Connected to the MySQL server...");
 });
 
 export default db;
