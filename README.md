@@ -1,5 +1,4 @@
 # Please note this is a work in progress.
-  // "type": "module",
 
 
 ## Getting Started with Create React App

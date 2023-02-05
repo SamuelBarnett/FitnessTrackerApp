@@ -8,6 +8,5 @@ import db from "../config/database";
 // };
 
 const addGoal = (...formData) => {
-
     db.query( "")
 };
