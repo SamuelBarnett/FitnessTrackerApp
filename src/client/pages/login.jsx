@@ -1,17 +1,35 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
+
+// need for login
+// find the user by username
+// verify that the password matches the hashed password in the database
+// assign a user id
+// redirect to home or goals
 const Login = () => {
-  const FormSubmit = (loginInfo) => {
-      
-    // HandleLogin();
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const HandleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("/users/login", {
+        name: name,
+        password: password,
+      });
+      navigate("/goals");
+      console.log("Axios success");
+    } catch (error) {
+      console.log(error);
+      console.log("Axios error");
+    }
   };
-  const [name,setName] = useState("");
-  const [password,setPassword] = useState("");
 
   return (
-    <form className="content-login" onSubmit={FormSubmit}>
+    <form className="content-login" onSubmit={HandleLogin}>
       <div className="">
         <h2>Login</h2>
         <div>
@@ -38,9 +56,7 @@ const Login = () => {
           <a> No account? Sign up</a>
         </div>
         <div className="">
-          <button type="submit">
-            Login
-          </button>
+          <button type="submit">Login</button>
         </div>
       </div>
     </form>

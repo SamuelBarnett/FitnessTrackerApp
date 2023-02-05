@@ -10,7 +10,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const navigation = useNavigate();
   
-  const Reg = async (e) => {
+  const HandleRegister = async (e) => {
     e.preventDefault();
     try {
       await axios.post("/users/register", {
@@ -29,7 +29,7 @@ const Register = () => {
   };
 
   return (
-    <form className="content-register" onSubmit={Reg}>
+    <form className="content-register" onSubmit={HandleRegister}>
       <div className="">
         <h2>Register</h2>
         <div>

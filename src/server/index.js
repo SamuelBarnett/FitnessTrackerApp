@@ -7,6 +7,7 @@ import express from "express";
 dotenv.config();
 import db from "./config/database.js";
 import UserRoutes from "./routes/Users.js";
+import bodyParser from "body-parser";
 const app = express();
 
 // app.use(bodyParser.urlencoded({ extended: true }))
@@ -24,11 +25,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 //   }
 //   console.log("Connected to the MySQL server.");
 // });
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 // handle incoming requests and look to see if there is json and convert them to objects
 app.use(express.json());
 // handles all routes starting with /users for example /users/register
 app.use("/users", UserRoutes);
+
 
 app.use(express.static(path.join(__dirname, "../../build")));
 

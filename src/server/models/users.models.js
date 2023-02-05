@@ -9,11 +9,13 @@ export const CreateUser = (name, password, email) => {
   });
 };
 export const LoginUser = (username) => {
-  db.query("SELECT * FROM users WHERE username = ?", username),
-    (err) => {
+  return new Promise((resolve, reject) => {
+    db.query("SELECT * FROM users WHERE username = ?", username, (err, res) => {
       if (err) {
         console.log("error:", err);
-        return;
+        reject(err);
       }
-    };
+      resolve(res);
+    });
+  });
 };
