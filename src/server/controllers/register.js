@@ -17,7 +17,7 @@ const Register = async (req, res) => {
   try {
     await CreateUser(name, HashedPassword, email);
     console.log("Registration successful");
-    res.status(200).json({ msg: "register controller success" });
+    return res.status(200).json({ msg: "register controller success" });
   } catch (error) {
     return res.status(404).json({ msg: "error register controller" });
   }

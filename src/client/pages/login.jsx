@@ -2,12 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
-
 // need for login
 // find the user by username
 // verify that the password matches the hashed password in the database
-// assign a user id
+// assign a session user id
 // redirect to home or goals
 const Login = () => {
   const [name, setName] = useState("");
@@ -21,10 +19,10 @@ const Login = () => {
         password: password,
       });
       navigate("/goals");
-      console.log("Axios success");
+      console.log("Form Axios post success");
     } catch (error) {
       console.log(error);
-      console.log("Axios error");
+      console.log("Form Axios post error");
     }
   };
 
@@ -53,7 +51,7 @@ const Login = () => {
         <div>
           <input type="checkbox" />
           <label> Remember Me </label>
-          <a> No account? Sign up</a>
+          <a>No account? Sign up</a>
         </div>
         <div className="">
           <button type="submit">Login</button>

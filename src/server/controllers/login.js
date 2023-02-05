@@ -7,6 +7,7 @@ const Login = async (req, res, next) => {
   let hashedPassword = "";
   let username = "";
   let user_id = 0;
+  // could be done with .then and .catch instead 
   try {
     const result = await LoginUser(name);
     hashedPassword = result[0].password;
@@ -21,6 +22,7 @@ const Login = async (req, res, next) => {
     }
   } catch (error) {
     console.log(error);
+    console.log("User not found");
     return res.status(404).json({ msg: "User not found" });
   }
   return res.status(200).json({ msg: "login success" });

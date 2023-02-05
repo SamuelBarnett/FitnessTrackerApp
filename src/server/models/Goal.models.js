@@ -7,6 +7,12 @@ import db from "../config/database";
 //   this.endDate = goal.endDate;
 // };
 
-const addGoal = (...formData) => {
-    db.query( "")
+export const addGoal = (req, res) => {
+  db.query(
+    "INSERT INTO goal (goal_name, date_added, start_goal_date, end_goal_date, description) VALUES (?,?,?,?,?)",
+    [],
+    (err,result) => {
+        
+    }
+  );
 };
