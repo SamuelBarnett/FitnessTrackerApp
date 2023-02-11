@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   const pages = [
-    { label: "Home", destination: "/" },
+    { label: "Ho", destination: "/" },
     { label: "Goals", destination: "/goals" },
     { label: "Food Dairy", destination: "/foodDiary" },
     { label: "Login", destination: "/Login" },
