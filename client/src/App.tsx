@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
-import Goals from "./pages/goals";
-import Login from "./pages/login";
-import Navigation from "./components/navigation";
-import Diary from "./pages/foodDiary";
-import Home from "./pages/home";
-import Register from "./pages/register";
-import Footer from "./components/footer";
+import Goals from "./pages/Goals";
+import Login from "./pages/Login";
+import Navigation from "./components/Navigation";
+import Diary from "./pages/FoodDiary";
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Footer from "./components/Footer";
+import AddGoal from "./pages/AddGoal";
 
 function App() {
   return (
@@ -16,13 +17,12 @@ function App() {
         <div className="flex min-h-screen">
           <Navigation />
           <Routes>
-            <Route>
               <Route index element={<Home />} />
               <Route path="/goals" element={<Goals container={[]} />} />
               <Route path="/foodDiary" element={<Diary />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-            </Route>
+              <Route path="/AddGoal" element={<AddGoal />} />
           </Routes>
         </div>
         <Footer />

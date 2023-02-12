@@ -19,7 +19,7 @@ const Diary = () => {
         <input />
       </div>
       <div>
-        <label> Fats </label>
+        <label> Fats </label> 
         <input />
       </div>
       <div>

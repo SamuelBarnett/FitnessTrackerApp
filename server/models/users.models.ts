@@ -1,4 +1,5 @@
 import db from "../config/database";
+import { Response } from "express";
 
 export const CreateUser = (name: string, password: string, email: string) => {
   db.query("INSERT INTO users (username, password, email) VALUES (?,?,?)", [name, password, email], (err) => {
