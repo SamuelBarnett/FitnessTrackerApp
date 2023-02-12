@@ -2,10 +2,10 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div>
+    <section>
       {/* Idea is to have a one of the progress graphs on the home page.*/}
-      <label> Home page </label>
-    </div>
+      <label className="text-3xl font-bold underline"> Home page </label>
+    </section>
   );
 };
 

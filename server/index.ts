@@ -5,8 +5,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express, { Express, Request, Response } from "express";
 import db from "./config/database";
-import UserRoutes from "./routes/Users";
-import GoalRoutes from "./routes/Goals";
+import UserRoutes from "./routes/UsersRoute";
+import GoalRoutes from "./routes/GoalsRoute";
 import bodyParser from "body-parser";
 
 dotenv.config();
@@ -17,6 +17,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // handle incoming requests and look to see if there is json and convert them to objects
 app.use(express.json());
+//cors
+// app.use(cors());
 // handles all routes starting with /users for example /users/register
 app.use("/users", UserRoutes);
 app.use("/goals", GoalRoutes);

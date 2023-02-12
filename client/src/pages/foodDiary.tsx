@@ -2,7 +2,7 @@ import React from "react";
 
 const Diary = () => {
   return (
-    <div className="">
+    <section className="">
       <div>
         <h1> Food Diary </h1>
       </div>
@@ -26,7 +26,7 @@ const Diary = () => {
         <label> Carbohydrates </label>
         <input />
       </div>
-    </div>
+    </section>
   );
 };
 

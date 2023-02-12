@@ -25,7 +25,7 @@ const Goals: React.FC<GoalsProps> = () => {
   }, []);
 
   return (
-    <div>
+    <section>
       <div>
         {container.map((containerItem) => (
           <GoalContainer
@@ -36,7 +36,7 @@ const Goals: React.FC<GoalsProps> = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

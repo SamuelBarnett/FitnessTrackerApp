@@ -1,4 +1,5 @@
 // controllers where you validate and
+import React from "react";
 import { Request, Response } from 'express';
 import db from "../config/database";
 import bcrypt from "bcrypt";

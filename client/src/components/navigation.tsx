@@ -20,7 +20,7 @@ const Navigation = () => {
       <ul className="">
         {pages.map((page) => (
           <li className="">
-            <NavLink className="" to={page.destination}>{page.label}</NavLink>
+            <NavLink className="text-3xl font-bold underline" to={page.destination}>{page.label}</NavLink>
           </li>
         ))}
       </ul>

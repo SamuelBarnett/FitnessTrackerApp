@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
+import './tailwind.css';
 import Goals from "./pages/Goals";
 import Login from "./pages/Login";
 import Navigation from "./components/Navigation";

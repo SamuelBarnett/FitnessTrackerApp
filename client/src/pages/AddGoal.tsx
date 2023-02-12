@@ -36,55 +36,57 @@ const AddGoal: React.FC = () => {
   };
 
   return (
-    <form className="content-AddGoal" onSubmit={HandleAddGoal}>
-      <div className="">
-        <div>
-        <label htmlFor="goalName">Goal Name</label>
+    <section>
+      <form className="content-AddGoal" onSubmit={HandleAddGoal}>
+        <div className="">
           <div>
-            <input
-              value={goalName}
-              onChange={(event) => setGoalName(event.target.value)}
-            />
+            <label htmlFor="goalName">Goal Name</label>
+            <div>
+              <input
+                value={goalName}
+                onChange={(event) => setGoalName(event.target.value)}
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="startDate">Start Date</label>
+            <div>
+              <input
+                value={startDate}
+                onChange={(event) => setStartDate(event.target.value)}
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="endDate">End Date</label>
+            <div>
+              <span>
+                <i className="fa-solid fa-email"></i>
+              </span>
+              <input
+                value={endDate}
+                onChange={(event) => setEndDate(event.target.value)}
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="description">Description</label>
+            <div>
+              <span>
+                <i className="fa-solid fa-email"></i>
+              </span>
+              <input
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+              />
+            </div>
+          </div>
+          <div>
+            <button type="submit">Add goal</button>
           </div>
         </div>
-        <div>
-          <label htmlFor="startDate">Start Date</label>
-          <div>
-            <input
-              value={startDate}
-              onChange={(event) => setStartDate(event.target.value)}
-            />
-          </div>
-        </div>
-        <div>
-          <label htmlFor="endDate">End Date</label>
-          <div>
-            <span>
-              <i className="fa-solid fa-email"></i>
-            </span>
-            <input
-              value={endDate}
-              onChange={(event) => setEndDate(event.target.value)}
-            />
-          </div>
-        </div>
-        <div>
-          <label htmlFor="description">Description</label>
-          <div>
-            <span>
-              <i className="fa-solid fa-email"></i>
-            </span>
-            <input
-              value={description}
-              onChange={(event) => setDescription(event.target.value)}
-            />
-          </div>
-        </div>
-        <div>
-          <button type="submit">Add goal</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </section>
   );
 };
 
