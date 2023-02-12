@@ -1,5 +1,4 @@
 import path from "path";
-
 // dotenv.config();
 import cors from "cors";
 import dotenv from "dotenv";
@@ -23,10 +22,10 @@ app.use(express.json());
 app.use("/users", UserRoutes);
 app.use("/goals", GoalRoutes);
 
-app.use(express.static(path.join(__dirname, '../../client/build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get('/*', (req: Request, res: Response) => {
- res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
+ res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 const PORT = process.env.PORT || 5000;
 const Server = app.listen(PORT, () => {

@@ -23,4 +23,5 @@ const Register = async (request: Request, response: Response) => {
     return response.status(404).json({ msg: "error register controller" });
   }
 };
+
 export default Register;
