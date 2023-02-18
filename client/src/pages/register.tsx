@@ -23,7 +23,7 @@ const Register: React.FC = () => {
         email: email,
         password: password,
       });
-      navigation("/goals");
+      navigation("/login");
       console.log("Axios success");
     } catch (error) {
       console.log(error);

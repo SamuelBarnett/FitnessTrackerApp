@@ -23,10 +23,10 @@ function App() {
           <div className="flex-1">
             <Routes>
               <Route index element={<Home />} />
-              <Route path="/goals" element={<Goals container={[]} />} />
-              <Route path="/foodDiary" element={<Diary />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
+              <Route path="/Goals" element={<Goals container={[]} />} />
+              <Route path="/FoodDiary" element={<Diary />} />
+              <Route path="/Login" element={<Login />} />
+              <Route path="/Register" element={<Register />} />
               <Route path="/AddGoal" element={<AddGoal />} />
             </Routes>
           </div>

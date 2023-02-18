@@ -6,7 +6,7 @@ interface Container {
   id: number;
   title: string;
   description: string;
-  dateUpdated: Date;
+  date_added: string;
 }
 
 interface GoalsProps {
@@ -14,27 +14,47 @@ interface GoalsProps {
 }
 
 const Goals: React.FC<GoalsProps> = () => {
+  let user_id: string = "null_holder";
+  const stored_id = sessionStorage.getItem("user_id");
+  if (stored_id !== null) {
+    user_id = stored_id;
+  }
   const [container, setContainer] = useState<Container[]>([]);
 
   useEffect(() => {
-    fetch("/goals/container")
+    const request = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user_id: user_id }),
+    };
+    fetch("/goals/container", request)
       .then((res) => res.json())
       .then((data) => {
         setContainer(data);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
   return (
-    <section>
+    <section className="flex flex-1 h-full rounded-tl-3xl border border-solid">
       <div>
         {container.map((containerItem) => (
           <GoalContainer
             key={containerItem.id}
             title={containerItem.title}
             description={containerItem.description}
-            dateUpdated={containerItem.dateUpdated}
+            date_added={containerItem.date_added}
           />
         ))}
+        <GoalContainer
+            key={2}
+            title={"testing"}
+            description={"description"}
+            date_added={"2020-03-02"}
+          />
       </div>
     </section>
   );

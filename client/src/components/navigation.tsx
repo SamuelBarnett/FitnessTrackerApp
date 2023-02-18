@@ -16,11 +16,11 @@ const Navigation = () => {
         </li>
         <li className={NavStyle}>
             <FontAwesomeIcon icon={faTrophy} />
-            <NavLink className={NavStyle} to="/goals">Goals</NavLink>
+            <NavLink className={NavStyle} to="/Goals">Goals</NavLink>
         </li>
         <li className={NavStyle}>
             <FontAwesomeIcon icon={faBook} />
-            <NavLink className={NavStyle} to="/foodDiary">Food Dairy</NavLink>
+            <NavLink className={NavStyle} to="/FoodDiary">Food Dairy</NavLink>
         </li>
         <li className={NavStyle}>
             <FontAwesomeIcon icon={faUserCircle} />
@@ -28,11 +28,11 @@ const Navigation = () => {
         </li>
         <li className={NavStyle}>
             <FontAwesomeIcon icon={faSignInAlt} />
-            <NavLink className={NavStyle} to="/register">Register</NavLink>
+            <NavLink className={NavStyle} to="/Register">Register</NavLink>
         </li>
         <li className={NavStyle}>
             <FontAwesomeIcon icon={faBookmark} />
-            <NavLink className={NavStyle} to="/addGoal">Add Goal</NavLink>
+            <NavLink className={NavStyle} to="/AddGoal">Add Goal</NavLink>
         </li>
       </ul>
     </nav>

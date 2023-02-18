@@ -5,6 +5,8 @@ import axios from "axios";
 interface FormData {
   name: string;
   password: string;
+  user_id:string;
+  username:string;
 }
 
 const Login: React.FC = () => {
@@ -15,8 +17,14 @@ const Login: React.FC = () => {
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      await axios.post<FormData>("/users/login", { name, password });
-      navigate("/goals");
+      const response = await axios.post<FormData>("/users/login", { name, password });
+      // Sets session information
+      const user_id = response.data.user_id;
+      const username = response.data.username;
+      sessionStorage.setItem("user_id", user_id);
+      sessionStorage.setItem("username", username);
+      
+      navigate("/Home");
       console.log("Form Axios post success");
     } catch (error) {
       console.log(error);

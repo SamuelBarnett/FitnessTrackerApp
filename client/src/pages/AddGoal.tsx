@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 interface FormData {
   goalName: string;
-  startDate: Date;
-  endDate: Date;
+  startDate: string;
+  endDate: string;
   description: string;
+  user_id: string;
 }
 
 const AddGoal: React.FC = () => {
@@ -18,6 +19,8 @@ const AddGoal: React.FC = () => {
 
   const navigation = useNavigate();
 
+  const user_id = sessionStorage.getItem("user_id");
+
   const HandleAddGoal = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
@@ -26,6 +29,7 @@ const AddGoal: React.FC = () => {
         startDate: startDate,
         endDate: endDate,
         description: description,
+        user_id: user_id,
       });
       navigation("/goals");
       console.log("Axios success");

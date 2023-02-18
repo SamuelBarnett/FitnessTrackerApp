@@ -4,7 +4,7 @@ import { addGoal, GetGoals } from "../controllers/Goals";
 // import db from "../config/database.ts"
 const goals: Router = express.Router();
 
-goals.get("/container", GetGoals);
+goals.post("/container", GetGoals);
 goals.post("/addGoal", addGoal);
 
 
