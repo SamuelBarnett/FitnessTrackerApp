@@ -52,6 +52,7 @@ const Register: React.FC = () => {
                 <i className="fa-solid fa-lock"></i>
               </span>
               <input
+                className="bg-transparent"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -63,7 +64,11 @@ const Register: React.FC = () => {
               <span>
                 <i className="fa-solid fa-email"></i>
               </span>
-              <input value={email} onChange={(e) => setEmail(e.target.value)} />
+              <input
+                className="bg-transparent"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
           </div>
           <div>

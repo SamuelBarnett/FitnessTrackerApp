@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
-import './styles/tailwind.css';
+import "./styles/tailwind.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import Goals from "./pages/Goals";
 import Login from "./pages/Login";
 import Navigation from "./components/Navigation";
@@ -10,21 +11,25 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
 import AddGoal from "./pages/AddGoal";
+import Header from "./components/Header";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="min-w-screen">
+        <Header />
         <div className="flex min-h-screen">
-          <Navigation />
-          <Routes>
+            <Navigation />
+          <div className="flex-1 ">
+            <Routes>
               <Route index element={<Home />} />
               <Route path="/goals" element={<Goals container={[]} />} />
               <Route path="/foodDiary" element={<Diary />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/AddGoal" element={<AddGoal />} />
-          </Routes>
+            </Routes>
+          </div>
         </div>
         <Footer />
       </div>

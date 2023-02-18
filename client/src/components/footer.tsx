@@ -3,7 +3,7 @@ import "../styles/index.css";
 
 const Footer = () => {
     return (
-      <div className="">
+      <div className="text-center">
         {/* Idea is to have a one of the progress graphs on the home page.*/}
         <label> @SamuelBarnett </label>
       </div>
