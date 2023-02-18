@@ -16,11 +16,11 @@ import Header from "./components/Header";
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-w-screen">
+      <div className="min-w-screen ">
         <Header />
         <div className="flex min-h-screen">
-            <Navigation />
-          <div className="flex-1 ">
+          <Navigation />
+          <div className="flex-1">
             <Routes>
               <Route index element={<Home />} />
               <Route path="/goals" element={<Goals container={[]} />} />
@@ -31,7 +31,7 @@ function App() {
             </Routes>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );

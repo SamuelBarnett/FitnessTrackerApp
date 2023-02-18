@@ -32,8 +32,8 @@ const Register: React.FC = () => {
   };
 
   return (
-    <section>
-      <form className="content-register" onSubmit={HandleRegister}>
+    <section className="flex justify-center flex-1 h-full rounded-tl-3xl border border-solid">
+      <form className="p-20 m-20 border border-solid rounded-xl bg-gray-300 h-1/2" onSubmit={HandleRegister}>
         <div className="">
           <h2>Register</h2>
           <div>

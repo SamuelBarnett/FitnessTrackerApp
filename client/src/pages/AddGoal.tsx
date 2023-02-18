@@ -36,7 +36,7 @@ const AddGoal: React.FC = () => {
   };
 
   return (
-    <section className="border border-solid mx-auto my-3">
+    <section className="flex justify-center flex-1 h-full rounded-tl-3xl border border-solid">
       <form className="content-AddGoal" onSubmit={HandleAddGoal}>
         <div className="border-black">
           <div>
