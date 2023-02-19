@@ -27,7 +27,7 @@ export const GetGoals = async (request: Request, response: Response) => {
   console.log(user_id + "get goal user_id");
   await handleGetGoals(user_id)
     .then((response) => {
-      response[0];
+      return response[0];
     })
     .catch((err) => {
       return;

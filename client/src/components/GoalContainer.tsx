@@ -16,16 +16,16 @@ const goalContainer: FC<GoalContainerProps> = ({
   date_added,
 }) => {
   return (
-    <div className="border border-solid rounded-lg p-5 m-5">
+    <div className="rounded-lg p-5 m-5 bg-white shadow-xl">
       <div className="flex space-x-10">
-        <div className="my-2 mr-10">
+        <div className="my-2 mr-10 text-2xl font-bold">
           <h1>{title}</h1>
         </div>
         <div className="my-2">
           <h2>{date_added}</h2>
         </div>
       </div>
-      <div className="mt-10">
+      <div className="mt-10 text-gray-500">
         <p>{description}</p>
       </div>
     </div>

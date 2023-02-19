@@ -28,10 +28,7 @@ const Goals: React.FC<GoalsProps> = () => {
       body: JSON.stringify({ user_id: user_id }),
     };
     fetch("/goals/container", request)
-      .then((res) => res.json())
-      .then((data) => {
-        setContainer(data);
-        console.log(data);
+      .then((res) => {
       })
       .catch((err) => {
         console.log(err);
@@ -39,7 +36,7 @@ const Goals: React.FC<GoalsProps> = () => {
   }, []);
 
   return (
-    <section className="flex flex-1 h-full rounded-tl-3xl border border-solid">
+    <section className="flex flex-1 h-full rounded-tl-3xl border border-solid bg-gray-200">
       <div>
         {container.map((containerItem) => (
           <GoalContainer
