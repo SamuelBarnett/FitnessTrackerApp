@@ -23,7 +23,7 @@ export const handleAddGoal = (
 
 export const handleGetGoals = (
   user_id: string
-): Promise<Array<{ goal_id: number; goal_name: string, date_added: Date, description: string}>> => {
+): Promise<Array<{ goal_id: number; goal_name: string, date_added: string, description: string}>> => {
   return new Promise((resolve, reject) => {
     db.query("SELECT goal_id, goal_name, start_goal_date, end_goal_date, description FROM goal WHERE user_id = ?", [user_id], (err, res) => {
       if (err) {
@@ -31,7 +31,7 @@ export const handleGetGoals = (
         reject(err);
       }
       console.log("Selected goals correctly.");
-      console.log(res);
+      console.log("models res" + res);
       resolve(res);
     });
   });

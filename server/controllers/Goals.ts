@@ -22,14 +22,16 @@ export const addGoal = async (request: Request, response: Response) => {
 // call the function that queries stuff then respond with formatted data to goals.
 // params: user_id
 export const GetGoals = async (request: Request, response: Response) => {
-  console.log("in get goal");
   const { user_id } = request.body;
-  console.log(user_id + "get goal user_id");
-  await handleGetGoals(user_id)
-    .then((response) => {
-      return response[0];
-    })
-    .catch((err) => {
-      return;
-    });
+  console.log(user_id + " get goal user_id");
+  try {
+    const result = await handleGetGoals(user_id);
+    console.log("in GetGoals success response. ");
+    console.log(result);
+    return response.json(result);
+  } catch (error) {
+    console.log("in GetGoals error.");
+    console.log(error);
+    return response.status(500).json({ error: error });
+  }
 };

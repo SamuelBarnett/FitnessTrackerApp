@@ -3,10 +3,10 @@ import "../styles/index.css";
 import GoalContainer from "../components/GoalContainer";
 
 interface Container {
-  id: number;
-  title: string;
+  goal_id: number;
+  goal_name: string;
   description: string;
-  date_added: string;
+  start_goal_date: string;
 }
 
 interface GoalsProps {
@@ -14,44 +14,70 @@ interface GoalsProps {
 }
 
 const Goals: React.FC<GoalsProps> = () => {
+
+  let data = new Array();
+  // sets session data
   let user_id: string = "null_holder";
   const stored_id = sessionStorage.getItem("user_id");
   if (stored_id !== null) {
     user_id = stored_id;
   }
-  const [container, setContainer] = useState<Container[]>([]);
+  const [containers, setContainer] = useState<Container[]>([]);
+
+  // gets the data from the database
+  const request = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ user_id: user_id }),
+  };
+
+  const getContainer = async () => {
+    try {
+      const res = await fetch("/goals/container", request);
+      const data = await res.json();
+      setContainer(data);
+      console.log("in fetching goals");
+      console.log(containers);
+    } catch (err) {
+      console.log("in fetching goals error");
+      console.log(err);
+      console.log(containers);
+    }
+  };
+
+  // const getContainer = async () => {
+  //   await fetch("/goals/container", request)
+  //     .then(async (res) => {
+  //       data = await res.json();
+  //       setContainer(data);
+  //       console.log("in fetching goals");
+  //     })
+  //     .catch((err) => {
+  //       console.log("in fetching goals error");
+  //       console.log(err);
+  //     });
+  // };
+
 
   useEffect(() => {
-    const request = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ user_id: user_id }),
-    };
-    fetch("/goals/container", request)
-      .then((res) => {
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    console.log(containers);
+  }, [containers]);
+  
+  useEffect(() => {
+    getContainer();
   }, []);
 
   return (
-    <section className="flex flex-1 h-full rounded-tl-3xl border border-solid bg-gray-200">
-      <div>
-        {container.map((containerItem) => (
+    <section className="flex flex-1 h-full rounded-tl-3xl border border-solid bg-gray-200 flex-row flex-wrap">
+      <div className="flex flex-wrap h-10">
+        {containers.map((containerItem) => (
           <GoalContainer
-            key={containerItem.id}
-            title={containerItem.title}
+            key={containerItem.goal_id}
+            title={containerItem.goal_name}
             description={containerItem.description}
-            date_added={containerItem.date_added}
+            date_added={containerItem.start_goal_date}
           />
         ))}
-        <GoalContainer
-            key={2}
-            title={"testing"}
-            description={"description"}
-            date_added={"2020-03-02"}
-          />
       </div>
     </section>
   );
