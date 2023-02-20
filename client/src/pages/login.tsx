@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import LoginGraph from "../components/LoginGraph";
 import axios from "axios";
 
 interface FormData {
   name: string;
   password: string;
-  user_id:string;
-  username:string;
+  user_id: string;
+  username: string;
 }
 
 const Login: React.FC = () => {
@@ -17,13 +18,16 @@ const Login: React.FC = () => {
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const response = await axios.post<FormData>("/users/login", { name, password });
+      const response = await axios.post<FormData>("/users/login", {
+        name,
+        password,
+      });
       // Sets session information
       const user_id = response.data.user_id;
       const username = response.data.username;
       sessionStorage.setItem("user_id", user_id);
       sessionStorage.setItem("username", username);
-      
+
       navigate("/Home");
       console.log("Form Axios post success");
     } catch (error) {
@@ -33,8 +37,11 @@ const Login: React.FC = () => {
   };
 
   return (
-    <section className="flex justify-center flex-1 h-full rounded-tl-3xl border border-solid">
-      <form className="p-20 m-20 border border-solid rounded-xl bg-gray-300 h-1/2" onSubmit={handleLogin}>
+    <section className="flex flex-1 h-full rounded-tl-3xl border border-solid">
+      <form
+        className="p-20 border-r border-solid rounded-xl bg-gray-100"
+        onSubmit={handleLogin}
+      >
         <div className="mx-auto">
           <h2 className="my-5 text-center text-xl">Login</h2>
           <div className="my-5">
@@ -57,7 +64,7 @@ const Login: React.FC = () => {
                 <i className="fa-solid fa-lock"></i>
               </span>
               <input
-              className="bg-transparent"
+                className="bg-transparent"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
               />
@@ -69,10 +76,15 @@ const Login: React.FC = () => {
             <label>No account? Sign up</label>
           </div>
           <div className="text-center ">
-            <button className="border border-solid" type="submit">Login</button>
+            <button className="border border-solid" type="submit">
+              Login
+            </button>
           </div>
         </div>
       </form>
+      <div>
+        <LoginGraph />
+      </div>
     </section>
   );
 };
