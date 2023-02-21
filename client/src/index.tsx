@@ -10,9 +10,9 @@ const root = ReactDOM.createRoot(
 
 try {
   root.render(
-    <React.StrictMode>
+    <>
       <App />
-    </React.StrictMode>
+    </>
   );
 } catch (error) {
   console.error('Error rendering React app:', error);

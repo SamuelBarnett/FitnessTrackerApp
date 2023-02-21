@@ -1,44 +1,111 @@
 import React, { Ref, useEffect, useRef } from "react";
 import * as d3 from "d3";
 
-const timeLineChart = () => {};
-
-const data = [
-  { name: "one", size: 1 },
-  { name: "two", size: 2 },
-  { name: "three", size: 3 },
-  { name: "four", size: 4 },
+const dataset1: [number, number][] = [
+  [1, 0],
+  [2, 20],
+  [3, 36],
+  [4, 50],
+  [5, 70],
+  [6, 100],
+  [7, 106],
+  [8, 123],
+  [9, 130],
+  [10, 134],
+  [11, 136],
+  [12, 138],
+  [13, 140],
 ];
 
+// functions of a graph
+
 function MakeSvg(graphRef: React.MutableRefObject<null>) {
+  //============================
+  // set size of container and margins
+  const margin = { top: 50, right: 50, bottom: 50, left: 100 };
+  const width = 400 - margin.left - margin.right;
+  const height = 500 - margin.top - margin.bottom;
+
   const svg = d3
     .select(graphRef.current)
     .append("svg")
-    .attr("width", 400)
-    .attr("height", 400)
-    .style("top", "50px") // Position the SVG element
-    .style("left", "50px");
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+  // set up scale
+  let xScale = d3.scaleLinear().domain([0, 13]).range([0, width]);
+  let yScale = d3.scaleLinear().domain([0, 200]).range([height, 0]);
+
+  // add text for x and y label
+  svg
+    .append("text")
+    .attr("x", width / 2 + 10)
+    .attr("y", height + 40)
+    .attr("text-anchor", "middle")
+    .style("font-family", "Helvetica")
+    .style("font-size", 12)
+    .text(" x label");
+
+  svg
+    .append("text")
+    .attr("text-anchor", "middle")
+    .attr("transform", "translate(-40," + 200 + ")rotate(-90)")
+    .style("font-family", "Helvetica")
+    .style("font-size", 12)
+    .text(" y label");
+
   svg
     .append("g")
-    .attr("cx", 200)
-    .attr("cy", 200)
-    .attr("r", 100)
-    .attr("fill", "red");
-}
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(xScale));
 
-function MakeGraph(graphRef: React.MutableRefObject<null>) {
-  
+  svg.append("g").call(d3.axisLeft(yScale));
+
+  // svg
+  //   .append("g")
+  //   .selectAll("dot")
+  //   .data(dataset1)
+  //   .enter()
+  //   .append("circle")
+  //   .attr("cx", (d) => {
+  //     return xScale(d[0]);
+  //   })
+  //   .attr("cy", (d) => {
+  //     return yScale(d[1]);
+  //   })
+  //   .attr("r", 2)
+  //   // .attr("transform", "translate(" + 100 + "," + 100 + ")")
+  //   .style("fill", "#CC0000");
+  // plot the line
+  const line = d3
+    .line<[number, number]>()
+    .x((d) => xScale(d[0]))
+    .y((d) => yScale(d[1]))
+    .curve(d3.curveMonotoneX);
+  // () => line(dataset1) || ""
+  svg
+    .append("path")
+    .datum(dataset1)
+    .attr("class", "line")
+    // .attr("transform", `translate(10, 10)`)
+    .attr("d", line)
+    .style("fill", "none")
+    .style("stroke", "red")
+    .style("stroke-width", "2");
 }
 
 const LoginGraph = () => {
   const graphRef = useRef(null);
   useEffect(() => {
     MakeSvg(graphRef);
+    console.log("svg rendered");
   }, []);
 
   return (
     <div className="relative">
-      <div ref={graphRef} />
+      <div id="graph" ref={graphRef} />
     </div>
   );
 };
