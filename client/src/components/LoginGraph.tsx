@@ -96,11 +96,14 @@ function MakeSvg(graphRef: React.MutableRefObject<null>) {
     .style("stroke-width", "2");
 }
 
+
+
+
 const LoginGraph = () => {
+  
   const graphRef = useRef(null);
   useEffect(() => {
     MakeSvg(graphRef);
-    console.log("svg rendered");
   }, []);
 
   return (
