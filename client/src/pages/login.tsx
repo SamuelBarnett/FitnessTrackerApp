@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginGraph from "../components/LoginGraph";
 import axios from "axios";
 
@@ -39,32 +39,38 @@ const Login: React.FC = () => {
   return (
     <section className="flex flex-1 h-full rounded-tl-3xl border border-solid">
       <form
-        className="p-20 border-r border-solid rounded-xl bg-gray-100"
+        className="p-[10rem] px-[18rem] border-r border-solid rounded-xl  w-1/2"
         onSubmit={handleLogin}
       >
+        <div className="mb-10">
+          <h1 className="text-center text-2xl text-neutral-500">Welcome</h1>
+        </div>
         <div className="mx-auto">
           <h2 className="my-5 text-center text-xl">Login</h2>
           <div className="my-5">
+            <span className="mr-2">
+              <i className="fa-solid fa-user"></i>
+            </span>
             <label>Username</label>
-            <div className="border-black border-b-[0.1rem] border-solid my-2">
-              <span className="mr-2">
-                <i className="fa-solid fa-user"></i>
-              </span>
+            <div className="border-black border-[0.1rem] border-solid my-2 p-1">
               <input
                 className="bg-transparent"
+                placeholder="John Smith"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
               />
             </div>
           </div>
           <div className="my-5">
+            <span className="mr-2">
+              <i className="fa-solid fa-lock"></i>
+            </span>
             <label htmlFor="password">Password</label>
-            <div className="border-black border-b-[0.1rem] border-solid my-2">
-              <span className="mr-2">
-                <i className="fa-solid fa-lock"></i>
-              </span>
+
+            <div className="border-black border-[0.1rem] border-solid my-2 p-1">
               <input
                 className="bg-transparent"
+                placeholder="**********"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
               />
@@ -73,16 +79,20 @@ const Login: React.FC = () => {
           <div className="my-5">
             <input type="checkbox" />
             <label> Remember Me </label>
-            <label>No account? Sign up</label>
+            <label className="ml-[5rem]">No account?</label>
+            <Link to={"/Register"} className="ml-[2rem] italic text-blue-500"> Sign up</Link>
           </div>
-          <div className="text-center ">
-            <button className="border border-solid" type="submit">
+          <div className="text-center">
+            <button
+              className="p-3 px-10 border border-solid text-white bg-black"
+              type="submit"
+            >
               Login
             </button>
           </div>
         </div>
       </form>
-      <div>
+      <div className="w-1/2 bg-gray-100 text-center">
         <LoginGraph />
       </div>
     </section>

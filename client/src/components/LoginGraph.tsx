@@ -23,8 +23,8 @@ function MakeSvg(graphRef: React.MutableRefObject<null>) {
   //============================
   // set size of container and margins
   const margin = { top: 50, right: 50, bottom: 50, left: 100 };
-  const width = 400 - margin.left - margin.right;
-  const height = 500 - margin.top - margin.bottom;
+  const width = 600 - margin.left - margin.right;
+  const height = 800 - margin.top - margin.bottom;
 
   const svg = d3
     .select(graphRef.current)
@@ -46,15 +46,15 @@ function MakeSvg(graphRef: React.MutableRefObject<null>) {
     .attr("text-anchor", "middle")
     .style("font-family", "Helvetica")
     .style("font-size", 12)
-    .text(" x label");
+    .text("Time");
 
   svg
     .append("text")
     .attr("text-anchor", "middle")
-    .attr("transform", "translate(-40," + 200 + ")rotate(-90)")
+    .attr("transform", "translate(-40," + 300 + ")rotate(-90)")
     .style("font-family", "Helvetica")
     .style("font-size", 12)
-    .text(" y label");
+    .text("Barbell Squat");
 
   svg
     .append("g")
@@ -96,11 +96,7 @@ function MakeSvg(graphRef: React.MutableRefObject<null>) {
     .style("stroke-width", "2");
 }
 
-
-
-
 const LoginGraph = () => {
-  
   const graphRef = useRef(null);
   useEffect(() => {
     MakeSvg(graphRef);
@@ -108,7 +104,8 @@ const LoginGraph = () => {
 
   return (
     <div className="relative">
-      <div id="graph" ref={graphRef} />
+      <div id="graph" ref={graphRef} className="ml-20" />
+      <label htmlFor="graph" className="text-xl"> Visualize your progress over time </label>
     </div>
   );
 };

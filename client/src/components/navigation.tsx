@@ -17,9 +17,9 @@ const Navigation = () => {
   // flex flex-col justify-center content-center
   let NavStyle = "ml-5 my-5 pr-6";
 
-  // if (sessionStorage.getItem("user_id") == null) {
-  //   NavStyle = "ml-5 my-5 pr-6 hidden"; 
-  // }
+  if (sessionStorage.getItem("user_id") == null) {
+    NavStyle = "ml-5 my-5 pr-6 hidden"; 
+  }
 
   return (
     <nav className="bg-white">
